@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from './Card';
 
 const Home = (props) => {
-  return ( 
+  return (
     <div className="Grid animated bounceInUp">
       {
         props.cards.map((card) => (
@@ -14,7 +14,7 @@ const Home = (props) => {
         ))
       }
     </div>
-   );
+  )
 }
  
 export default Home;

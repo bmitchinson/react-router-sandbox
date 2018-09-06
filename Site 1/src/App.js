@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Vitamin from './components/Vitamin';
 import Navigation from './components/Navigation';
 import ProductDetails from './components/ProductDetails';
+import Lost from './components/Lost';
 import data from './data/data.json';
 
 class App extends Component {
@@ -20,8 +21,6 @@ class App extends Component {
     this.closeNav = this.closeNav.bind(this);
   }
 
-  // Can this be moved to the constructor? 
-  // It's being deprecated, why is it so widely used :///
   componentWillMount() {
     this.setState({
       cards: data,
@@ -47,8 +46,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="App-header">
-            <img src={logo}
-              className={this.state.toggleLogo ? 'static-logo' : 'static-logo animated jello'}
+            <img src={logo} 
+              className={this.state.toggleLogo ? 'static-logo' : 'static-logo animated jello'} 
               alt="logo"
               onMouseEnter={this.toggleLogo}
               onMouseLeave={this.toggleLogo}
@@ -66,13 +65,14 @@ class App extends Component {
             )} />
             <Route exact path="/vitamin" component={Vitamin} />
             <Route exact path="/product/:id" render={(props) => {
-              let cardPosition = props.location.pathname.replace('/product', '');
+              let cardPosition = props.location.pathname.replace('/product/', '');
               return (
                 <ProductDetails
                   card={this.state.cards[cardPosition]}
                 />
               )
             }} />
+            <Route component={Lost} />
           </Switch>
         </div>
       </Router>
