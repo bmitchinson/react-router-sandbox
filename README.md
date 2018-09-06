@@ -6,4 +6,4 @@ A learning enviornment to follow along with [this lynda tutorial, taught by Emma
 - [x] Setting Up
 - [x] Web Routing
 - [ ] ~~Native Routing~~ (I really want to work with native in the future, but am staying focused on the web app for now.)
-- [ ] Futher Exploration + Conclusion
+- [x] Futher Exploration + Conclusion
